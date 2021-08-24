@@ -41,12 +41,12 @@ parent.addEventListener('scroll', () => {
 )
 
 horizontalFirstContainer.addEventListener('scroll', () => {
-        if (horizontalFirstContainer.scrollLeft < slideX_1[1].offsetLeft) {radioXbtn[0].style.backgroundColor = "#444"; radioXbtn[1].style.backgroundColor = "transparent";} else {radioXbtn[0].style.backgroundColor = "transparent"; radioXbtn[1].style.backgroundColor = "#444";};
+        if (horizontalFirstContainer.scrollLeft < slideX_1[1].offsetLeft * 0.6) {radioXbtn[0].style.backgroundColor = "#444"; radioXbtn[1].style.backgroundColor = "transparent";} else {radioXbtn[0].style.backgroundColor = "transparent"; radioXbtn[1].style.backgroundColor = "#444";};
     }
 )
 
 parent.addEventListener('scroll', () => {
-    if (parent.scrollTop < slideY[1].offsetTop) {radioXbtn[0].style.display = "flex"; radioXbtn[1].style.display = "flex"} else {radioXbtn[0].style.display = "none"; radioXbtn[1].style.display = "none"};
+    if (parent.scrollTop < slideY[1].offsetTop / 2) {radioXbtn[0].style.opacity = "1"; radioXbtn[1].style.opacity = "1"} else {radioXbtn[0].style.opacity = "0"; radioXbtn[1].style.opacity = "0"};
 }
 )
 
