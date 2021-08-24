@@ -4,7 +4,7 @@
   "description": "First version.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/matiasespina1991/snap_scroll_y-x_slider/issues"
   },
-  "homepage": "https://github.com/matiasespina1991/snap_scroll_y-x_slider#readme"
+  "homepage":"https://matiasespina1991.github.io/y-x_slider_default_demo",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
