@@ -1,24 +1,26 @@
-var parent = document.getElementById('parent');
-var horizontalFirstContainer = document.getElementById('horizontal-first-container');
-var slideX_1 = document.getElementsByClassName('horizontal-1')
-var slideY = document.getElementsByClassName('slide-y');
-var slideYlabel = document.getElementsByClassName('slide-y-label');
-var radioXbtn = document.getElementsByClassName('slide-x-label')
+var globalContainer = document.getElementById('global-container');
 var radioBtnY = Array.from(document.getElementsByClassName("radio-btn-y"));
+var radioBtnYLabel = document.getElementsByClassName('radio-btn-y-label');
+
+var horizontalFirstContainer = document.getElementById('horizontal-slide-first-container'); 
+var slideX_1 = document.getElementsByClassName('horizontal-slide-1')
+var slideY = document.getElementsByClassName('slide-y');
+var radioBtnXLabel = document.getElementsByClassName('radio-btn-x-label')
+
 
 // Set Radio button 1 checked by default
-if (parent.scrollTop == 0) {
-    slideYlabel[0].style.backgroundColor = "#444"
+if (globalContainer.scrollTop == 0) {
+    radioBtnYLabel[0].style.backgroundColor = "#444"
 };
 
 if (horizontalFirstContainer.scrollLeft == 0) {
-    radioXbtn[0].style.backgroundColor = "#444";
+    radioBtnXLabel[0].style.backgroundColor = "#444";
 };
 
 // Click function for radio button to scroll to the correspondent slide
 radioBtnY.forEach(function(buttonY) {(buttonY.addEventListener('click', (e) => {
             e.preventDefault();
-            parent.scrollTo(
+            globalContainer.scrollTo(
                         {   
                             top: slideY[e.target.dataset.index].offsetTop,
                             behavior: 'smooth'
@@ -31,31 +33,31 @@ radioBtnY.forEach(function(buttonY) {(buttonY.addEventListener('click', (e) => {
 )
 
 // Check the label of the radio buttons when scrolling to the correspondent slide
-parent.addEventListener('scroll', () => {
-        if (parent.scrollTop < slideY[1].offsetTop) {slideYlabel[0].style.backgroundColor = "#444"; radioXbtn[0].style.display = "flex"} else {slideYlabel[0].style.backgroundColor = "transparent";};
-        if (parent.scrollTop >= slideY[1].offsetTop && parent.scrollTop < slideY[2].offsetTop) {slideYlabel[1].style.backgroundColor = "#444"} else {slideYlabel[1].style.backgroundColor = "transparent"};
-        if (parent.scrollTop >= slideY[2].offsetTop && parent.scrollTop < slideY[3].offsetTop) {slideYlabel[2].style.backgroundColor = "#444"} else {slideYlabel[2].style.backgroundColor = "transparent"};
-        if (parent.scrollTop >= slideY[3].offsetTop && parent.scrollTop < slideY[4].offsetTop) {slideYlabel[3].style.backgroundColor = "#444"} else {slideYlabel[3].style.backgroundColor = "transparent"};
-        if (parent.scrollTop >= slideY[4].offsetTop) {slideYlabel[4].style.backgroundColor = "#444"} else {slideYlabel[4].style.backgroundColor = "transparent"};
+globalContainer.addEventListener('scroll', () => {
+        if (globalContainer.scrollTop < slideY[1].offsetTop * 0.5) {radioBtnYLabel[0].style.backgroundColor = "#444"; radioBtnXLabel[0].style.display = "flex"} else {radioBtnYLabel[0].style.backgroundColor = "transparent";};
+        if (globalContainer.scrollTop >= slideY[1].offsetTop * 0.5 && globalContainer.scrollTop < slideY[2].offsetTop * 0.6) {radioBtnYLabel[1].style.backgroundColor = "#444"} else {radioBtnYLabel[1].style.backgroundColor = "transparent"};
+        if (globalContainer.scrollTop >= slideY[2].offsetTop * 0.6 && globalContainer.scrollTop < slideY[3].offsetTop * 0.7) {radioBtnYLabel[2].style.backgroundColor = "#444"} else {radioBtnYLabel[2].style.backgroundColor = "transparent"};
+        if (globalContainer.scrollTop >= slideY[3].offsetTop * 0.7 && globalContainer.scrollTop < slideY[4].offsetTop * 0.8) {radioBtnYLabel[3].style.backgroundColor = "#444"} else {radioBtnYLabel[3].style.backgroundColor = "transparent"};
+        if (globalContainer.scrollTop >= slideY[4].offsetTop * 0.8) {radioBtnYLabel[4].style.backgroundColor = "#444"} else {radioBtnYLabel[4].style.backgroundColor = "transparent"};
     }
 )
 
 horizontalFirstContainer.addEventListener('scroll', () => {
-        if (horizontalFirstContainer.scrollLeft < slideX_1[1].offsetLeft * 0.6) {radioXbtn[0].style.backgroundColor = "#444"; radioXbtn[1].style.backgroundColor = "transparent";} else {radioXbtn[0].style.backgroundColor = "transparent"; radioXbtn[1].style.backgroundColor = "#444";};
+        if (horizontalFirstContainer.scrollLeft < slideX_1[1].offsetLeft * 0.6) {radioBtnXLabel[0].style.backgroundColor = "#444"; radioBtnXLabel[1].style.backgroundColor = "transparent";} else {radioBtnXLabel[0].style.backgroundColor = "transparent"; radioBtnXLabel[1].style.backgroundColor = "#444";};
     }
 )
 
-parent.addEventListener('scroll', () => {
-    if (parent.scrollTop < slideY[1].offsetTop / 2) {radioXbtn[0].style.opacity = "1"; radioXbtn[1].style.opacity = "1"} else {radioXbtn[0].style.opacity = "0"; radioXbtn[1].style.opacity = "0"};
+globalContainer.addEventListener('scroll', () => {
+    if (globalContainer.scrollTop < slideY[1].offsetTop / 2) {radioBtnXLabel[0].style.opacity = "1"; radioBtnXLabel[1].style.opacity = "1"} else {radioBtnXLabel[0].style.opacity = "0"; radioBtnXLabel[1].style.opacity = "0"};
 }
 )
 
 // Check radio buttons when scrolling to the correspondent slide // ignored
-// parent.addEventListener('scroll', () => {
-//         if (parent.scrollTop < slideY[1].offsetTop) {document.radioy.radioy.value="radio-btn-y-1"};
-//         if (parent.scrollTop >= slideY[1].offsetTop && parent.scrollTop < slideY[2].offsetTop) {document.radioy.radioy.value="radio-btn-y-2"};
-//         if (parent.scrollTop >= slideY[2].offsetTop && parent.scrollTop < slideY[3].offsetTop) {document.radioy.radioy.value="radio-btn-y-3"};
-//         if (parent.scrollTop >= slideY[3].offsetTop && parent.scrollTop < slideY[4].offsetTop) {document.radioy.radioy.value="radio-btn-y-4"};
-//         if (parent.scrollTop >= slideY[4].offsetTop) {document.radioy.radioy.value="radio-btn-y-5"};
+// global-container.addEventListener('scroll', () => {
+//         if (global-container.scrollTop < slideY[1].offsetTop) {document.radioy.radioy.value="radio-btn-y-1"};
+//         if (global-container.scrollTop >= slideY[1].offsetTop && global-container.scrollTop < slideY[2].offsetTop) {document.radioy.radioy.value="radio-btn-y-2"};
+//         if (global-container.scrollTop >= slideY[2].offsetTop && global-container.scrollTop < slideY[3].offsetTop) {document.radioy.radioy.value="radio-btn-y-3"};
+//         if (global-container.scrollTop >= slideY[3].offsetTop && global-container.scrollTop < slideY[4].offsetTop) {document.radioy.radioy.value="radio-btn-y-4"};
+//         if (global-container.scrollTop >= slideY[4].offsetTop) {document.radioy.radioy.value="radio-btn-y-5"};
 //     }
 // )
