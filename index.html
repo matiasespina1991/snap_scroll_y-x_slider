@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap Scroll Test</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <!-- Global container -->
+    <div class="global-container" id="global-container">
+        <!-- First horizontal slider -->
+        <div class="slide-y horizontal-slide-container" id="horizontal-slide-first-container">
+            <span class="sub-child number1-a horizontal-slide-1">1</span><span class="sub-child number1-b horizontal-slide-1">1</span>
+            <!-- Radio buttons for X-scroll -- First Slider -->
+            <form name="radiox-1" class="radiox radiox-1">
+                <!-- Slider button 1 -->
+                <input type="radio" name="radiox" class="radio-btn-x" data-index="0" value="radio-btn-x-1" id="radio-btn-x-1">
+                <label for="radio-btn-x-1" class="radio-btn-x-label" id="radio-btn-x-1-label"></label>
+                <!-- Slider button 1 -->
+                <input type="radio" name="radiox" class="radio-btn-x" data-index="1" value="radio-btn-x-2" id="radio-btn-x-2">
+                <label for="radio-btn-x-2" class="radio-btn-x-label" id="radio-btn-x-2-label"></label>
+            </form>
+        </div>
+        <!-- Second horizontal slider -->
+        <div class="slide-y horizontal-slide-container" id="childSecond">
+            <span class="sub-child number2-a">2</span><span class="sub-child number2-b">2</span>
+        </div>
+        <!-- Third horizontal slider -->
+        <div class="slide-y horizontal-slide-container">
+            <span class="sub-child number3-a">3</span><span class="sub-child number3-b">3</span>
+        </div>
+        <!-- Fourth horizontal slider -->
+        <div class="slide-y horizontal-slide-container">
+            <span class="sub-child number4-a">4</span><span class="sub-child number4-b">4</span>
+        </div>
+        <!-- Fifth horizontal slider -->
+        <section class="slide-y number5">5</section>
+    </div>
+    
+    <!-- Radio buttons for Y-scroll -- Right Side -->
+    <form class="radio-btn-y-container">
+        <!-- Radio button 1 -->
+        <input type="radio" class="radio-btn-y" data-index="0" value="radio-btn-y-1" id="radio-btn-y-1">
+        <label for="radio-btn-y-1" class="radio-btn-y-label" id="radio-btn-y-1-label"></label>
+        <!-- Radio button 2 -->
+        <input type="radio" class="radio-btn-y" data-index="1" value="radio-btn-y-2" id="radio-btn-y-2">
+        <label for="radio-btn-y-2" class="radio-btn-y-label"></label>
+        <!-- Radio button 3 -->
+        <input type="radio" class="radio-btn-y" data-index="2" value="radio-btn-y-3" id="radio-btn-y-3">
+        <label for="radio-btn-y-3" class="radio-btn-y-label"></label>
+        <!-- Radio button 4 -->
+        <input type="radio" class="radio-btn-y" data-index="3" value="radio-btn-y-4" id="radio-btn-y-4">
+        <label for="radio-btn-y-4" class="radio-btn-y-label"></label>
+        <!-- Radio button 5 -->
+        <input type="radio" class="radio-btn-y" data-index="4" value="radio-btn-y-5" id="radio-btn-y-5">
+        <label for="radio-btn-y-5" class="radio-btn-y-label"></label>
+    </form>
+</body>
+    <script src="script.js"></script>
+</html>
