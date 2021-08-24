@@ -2,7 +2,12 @@ var globalContainer = document.getElementById('global-container');
 var radioBtnY = Array.from(document.getElementsByClassName("radio-btn-y"));
 var radioBtnYLabel = document.getElementsByClassName('radio-btn-y-label');
 
+var radioBtnXFirst = Array.from(document.getElementsByClassName("radio-btn-x-first"));
+var radioBtnXSecond = Array.from(document.getElementsByClassName("radio-btn-x-second"));
+var slideX = document.getElementsByClassName('sub-child');
+
 var horizontalFirstContainer = document.getElementById('horizontal-slide-first-container'); 
+var horizontalSecondContainer = document.getElementById('horizontal-slide-second-container'); 
 var slideX_1 = document.getElementsByClassName('horizontal-slide-1')
 var slideY = document.getElementsByClassName('slide-y');
 var radioBtnXLabel = document.getElementsByClassName('radio-btn-x-label')
@@ -25,12 +30,40 @@ radioBtnY.forEach(function(buttonY) {(buttonY.addEventListener('click', (e) => {
                             top: slideY[e.target.dataset.index].offsetTop,
                             behavior: 'smooth'
                         }
-                    );
+                    )
                 }
             )
         )
     }
 )
+
+radioBtnXFirst.forEach(function(buttonX) {(buttonX.addEventListener('click', (e) => {
+            e.preventDefault();
+            horizontalFirstContainer.scrollTo(
+                        {   
+                            left: slideX[e.target.dataset.index].offsetLeft,
+                            behavior: 'smooth'
+                        }
+                    )
+                }
+            )
+        )
+    }
+)
+
+// radioBtnXSecond.forEach(function(buttonX) {(buttonX.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             horizontalSecondContainer.scrollTo(
+//                         {   
+//                             left: slideX[e.target.dataset.index].offsetLeft,
+//                             behavior: 'smooth'
+//                         }
+//                     );
+//                 }
+//             )
+//         )
+//     }
+// )
 
 // Check the label of the radio buttons when scrolling to the correspondent slide
 globalContainer.addEventListener('scroll', () => {
